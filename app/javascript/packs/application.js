@@ -13,3 +13,9 @@ window.Noty = require("noty")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "bootstrap"
+import "../stylesheets/application.scss"
+
+require("jquery")
+

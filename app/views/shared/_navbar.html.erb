@@ -1,7 +1,7 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
-            <h1>テストサイトMinpaku6</h1>
+            <h1>Stay Reserve</h1>
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -25,12 +25,15 @@
                         <%= link_to  "ログイン", new_user_session_path, class: "button is-white" %>
                     </div>
                 </div>
-            <!-- ログインしていたら　-->
+            <!-- ログインしていたら -->
             <% else %>
                 <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 100px;">
                     <a class="navbar-item"><%= current_user.full_name %></a>
                     <div class="navbar-dropdown">
-                        <%= link_to  "ユーザ登録情報編集", edit_user_registration_path, class: "navbar-item" %>
+                        <%= link_to  "施設の新規登録", :new_room, class: "navbar-item" %>
+                        <%= link_to  "予約済み一覧", "/reservations", class: "navbar-item" %>
+                        <%= link_to  "登録済み一覧", "/rooms/own", class: "navbar-item" %>
+                        <%= link_to  "アカウント設定", edit_user_registration_path, class: "navbar-item" %>
                         <a href="" class="navbar-item"></a>
                         <hr class="navbar-divider">
                         <%= link_to  "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-item" %>

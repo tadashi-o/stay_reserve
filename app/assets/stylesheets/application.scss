@@ -19,3 +19,128 @@
 
 @import 'noty/lib/noty';
 @import 'noty/lib/themes/sunset';
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+}
+
+.container h2 {
+    font-size: 30px;
+}
+
+.form_position {
+    margin:auto;
+    width: 700px;
+}
+
+.title {
+    margin:25px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.index_title {
+    margin:25px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.index_title h2 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+.button_icon {
+    margin-top: -4px;
+    margin-right: 4px;
+}
+
+.footer {
+    margin:25px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Required::after {
+    content: "*";
+    color: #ff4949;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.new_form {
+    margin: auto;
+    width: 700px;
+}
+
+.new_form .link {
+    margin-top: 10px;
+    text-decoration: none;
+    display:block;
+}
+
+.new_form .link svg {
+    vertical-align: text-bottom;
+}
+
+.register_form {
+    margin-bottom: 20px;
+}
+
+.index_title svg {
+    margin-top: -3px;
+}
+
+.register_form table td {
+    margin-left: 50px;
+}
+
+.detail_table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.detail_table th,
+.detail_table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.detail_table th {
+    background-color: #f5f5f5;
+    width: 160px;
+}
+
+.footer_button {
+    margin: 0 0 0 500px;
+}
+
+.alert_position {
+    margin-top: 18px;
+}
+
+.form_label {
+    margin-bottom: 20px;
+}
+
+.form_label .text_area {
+    height: 150px;
+}
+
+.form_label .img {
+    display: block;
+}

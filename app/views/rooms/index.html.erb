@@ -1,0 +1,27 @@
+ <h3>登録施設情報一覧</h3>
+ 
+ <table>
+   <thead>
+     <tr>
+       <th>画像</th>
+       <th>施設名</th>
+       <th>紹介文</th>
+       <th>料金</th>
+       <th>作成日</th>
+     </tr>
+   </thead>
+ 
+   <tbody>
+     <% @rooms.each do |room| %>
+       <tr>
+         <td><%= image_tag room.facility_img.url, size: '300x200' %></td>
+         <td><%= room.facility_name %><%= link_to "参照", room %></td>
+         <td><%= room.facility_detail %></td>
+         <td><%= room.price %></td>
+         <td><%= room.created_at %></td>
+       </tr>
+     <% end %>
+   </tbody>
+ </table>
+ 
+ <p><%= link_to "ユーザー新規登録", :new_room %></p>

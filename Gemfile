@@ -61,3 +61,10 @@ gem 'bulma-extensions-rails', '~> 1.0.30'
 gem 'devise'
 
 gem 'rails-i18n'
+
+gem 'pry-rails'
+
+gem 'carrierwave', '~> 2.0'
+
+gem 'bootstrap-sass'
+gem 'jquery-rails'

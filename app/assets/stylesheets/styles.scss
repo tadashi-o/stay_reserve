@@ -23,6 +23,21 @@ $sides: (top, bottom, left, right);
         font-size: #{$space}px !important;
     }
 }
+
+.FirstView {
+  background-image: image-url('top.jpg');
+  background-size: cover;
+    background-position: 50%;
+    height: 750px;
+    margin-bottom: 180px;
+    padding-top: 80px;
+    width: 100%;
+}
+
+footer {
+  background-color: #CACCCD;
+}
+
 .is-horizontal-center {
   justify-content: center;
 }

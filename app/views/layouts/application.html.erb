@@ -8,21 +8,26 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Googleフォント -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
     <!-- ナビゲーションバー -->
     <%= render  "shared/navbar" %>
-
     <!-- noty -->
     <%= render 'shared/notification' %>
-    
 
     <%= yield %>
+  
+  <footer>
+    <div class="container-fluid">
+    
+
+    <p class="Footer__copyright">
+      Copyright © Potepan Share 2023 All rights reserved
+    </p>
+  </div>
+  </footer>
+
   </body>
 </html>
