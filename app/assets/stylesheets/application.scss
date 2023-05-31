@@ -82,7 +82,7 @@
 
 .new_form {
     margin: auto;
-    width: 700px;
+    width: 1250px;
 }
 
 .new_form .link {
@@ -143,4 +143,13 @@
 
 .form_label .img {
     display: block;
+}
+
+.header_tittle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.room_detail {
+    display: flex;
 }

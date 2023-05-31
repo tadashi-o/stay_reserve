@@ -11,21 +11,42 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    
+    @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def new
+    @room = Room.find(params[:id])
+    @reservation = Reservation.new(reservation_params)
+  end
+
+  def confirm
+    @room = Room.find(params[:id])
+    @user = current_user.id
+    @reservation = Reservation.new(reservation_params)
+    @price = @room.price * @reservation.people * (@reservation.checkout - @reservation.checkin).to_i
+    @days = (@reservation.checkout - @reservation.checkin).to_i
+    binding.pry
   end
 
   def create
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.save
+      redirect_to "/reservations"
+    else
+      render "/reservations/confirm"
+    end
   end
 
-  def edit
-
+  def back
+    @reservation = Reservation.new(params.require(:reservation).permit(:checkin,:checkout,:user_id,:room_id,:people))
+    @room = Room.find(@reservation.room_id)
+    @user = User.find(@reservation.user_id)
+    render "/rooms/own"
   end
 
-  def destoy
-
+  private
+  def reservation_params
+    params.require(:reservation).permit(:checkin,:checkout,:people, :user_id, :room_id)
   end
 
 end

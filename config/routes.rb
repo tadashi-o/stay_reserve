@@ -17,9 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :reservations
-
-  
-
+  resources :reservations do
+    collection do
+      post 'confirm' ,to: 'reservations#confirm'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

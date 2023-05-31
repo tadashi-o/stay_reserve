@@ -21,6 +21,8 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @user = current_user.id
+    @reservation = Reservation.new
   end
 
   def own
@@ -32,10 +34,10 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
+    @room = Room.find(params[:id])
     if @room.update(params.require(:room).permit(:facility_name, :facility_detail, :price, :address, :facility_img, :user_id))
-      flash[:notice] = "タイトル「#{@room.fasility_name}」の情報を更新しました"
-      redirect_to :tasks
+      flash[:notice] = "タイトル「#{@room.facility_name}」の情報を更新しました"
+      redirect_to "/rooms/own"
     else
       flash[:alert] = "施設情報の更新に失敗しました"
       render "edit"

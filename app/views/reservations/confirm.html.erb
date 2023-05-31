@@ -1,0 +1,12 @@
+<%= form_with model:@reservation do |f| %>
+  <%= @reservation.checkin %>
+  <%= @reservation.dcheckout %>
+  <%= @reservation.pepole %>
+
+  <div class="actions">
+    <%= f.submit '戻る', name: 'back' %>
+  </div>
+  <div class="actions">
+    <%= f.submit '確定' %>
+  </div>
+<% end %>

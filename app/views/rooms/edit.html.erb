@@ -1,11 +1,11 @@
 <div class="container">
   <section>
     <div class="form_position">
-      <div class="title">
-        <h2>施設情報の編集</h2>
-      </div>
-      <div class="register_form">
-      <%= form_with model: @room do |f| %>
+        <div class="title">
+          <h2>施設情報の編集</h2>
+        </div> 
+        <div class="register_form">
+          <%= form_with model: @room do |f| %>
           <div class="form_label">
             <%= f.label :facility_name ,"施設名", class:"Required" %>
             <%= f.text_field :facility_name,class:"input is-link", placeholder: "ルーム名を入力" %>
@@ -26,13 +26,14 @@
             <%= f.label :facility_img ,"施設画像" %>
             <%= f.file_field :facility_img,class:"img"%>
           </div>
-      </div>
 
-      <div class="footer_button">
-        <a href="/rooms/own"><button type="button" class="button">キャンセル</button></a>
-        <input type="submit" name="commit" value="登録完了" class="button is-link" data-disable-with="保存" />
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          <div class="footer_button">
+            <a href="/rooms/own"><button type="button" class="button">キャンセル</button></a>
+            <input type="submit" name="commit" value="登録完了" class="button is-link" data-disable-with="保存" />
+          </div>
+          <% end %>
+        </div>
       </div>
-      <% end %>
-    </div>
   </section>
 </div>

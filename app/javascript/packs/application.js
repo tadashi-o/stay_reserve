@@ -14,8 +14,9 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "bootstrap"
+require("jquery")
+
 import "../stylesheets/application.scss"
 
-require("jquery")
+
 
