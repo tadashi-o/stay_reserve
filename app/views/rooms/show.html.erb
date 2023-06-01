@@ -46,9 +46,8 @@
           </div>
           <div class="form_label">
             <%= f.label :pepole ,"人数", class:"Required"  %>
-            <%= f.text_field :pepole,class:"input is-link", placeholder: "" %>
+            <%= f.text_field :pepole,class:"input is-link"%>
           </div>
-          <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :room_id, value: @room.id %>
           <% if (!user_signed_in?) %>
           <div class="footer_button">

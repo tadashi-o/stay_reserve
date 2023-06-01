@@ -1,8 +1,7 @@
 <%= form_with model:@reservation do |f| %>
   <%= @reservation.checkin %>
-  <%= @reservation.dcheckout %>
+  <%= @reservation.checkout %>
   <%= @reservation.pepole %>
-
   <div class="actions">
     <%= f.submit '戻る', name: 'back' %>
   </div>

@@ -1,15 +1,5 @@
 class ReservationsController < ApplicationController
-
-  before_action :move_to_signed_in
-
-  private
-  def move_to_signed_in
-    unless user_signed_in?
-      #サインインしていないユーザーはログインページが表示される
-      redirect_to  '/login'
-    end
-  end
-
+  
   def index
     @reservations = Reservation.where(user_id: current_user.id)
   end
@@ -20,12 +10,9 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    @room = Room.find(params[:id])
+    @room = Room.find(params[:reservation][:room_id])
     @user = current_user.id
     @reservation = Reservation.new(reservation_params)
-    @price = @room.price * @reservation.people * (@reservation.checkout - @reservation.checkin).to_i
-    @days = (@reservation.checkout - @reservation.checkin).to_i
-    binding.pry
   end
 
   def create
@@ -46,7 +33,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:checkin,:checkout,:people, :user_id, :room_id)
+    params.require(:reservation).permit(:checkin,:checkout,:pepole, :user_id, :room_id)
   end
 
 end
