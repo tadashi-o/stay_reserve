@@ -8,6 +8,15 @@ ja:
         password: パスワード
         email: メールアドレス
         phone_number: 電話番号
+      room:
+        facility_name: 施設名
+        facility_detail: 施設詳細
+        price: 料金
+        address: 住所
+      reservation:
+        check_in: チェックイン日
+        check_out: チェックアウト日
+        pepole: 人数
   time:
     formats:
         full_date: "%Y年%m月%d日 (%a)"

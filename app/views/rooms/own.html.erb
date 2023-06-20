@@ -1,6 +1,7 @@
 <section class="container">
   <h2>登録施設情報一覧</h2>
-  <table class="table is-striped">
+  <%= flash[:notice] %>
+  <table class="table is-striped list_table">
     <thead>
       <tr>
         <th>画像</th>
@@ -15,9 +16,9 @@
     <% @rooms.each do |room| %>
       <tr>
         <td><%= image_tag room.facility_img.url, size: '100x120' %></td>
-        <td><%= link_to room.facility_name, room %></td>
+        <td><%= link_to room.facility_name, room  %></td>
         <td><%= room.facility_detail %></td>
-        <td><%= room.price %></td>
+        <td>¥<%= room.price.to_s(:delimited) %>〜</td>
         <td><%= room.created_at.strftime('%Y/%m/%d') %></td>
         <td>
           <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 100px;">
@@ -26,7 +27,7 @@
             </svg></a>
             <div class="navbar-dropdown">
               <%= link_to  "編集", [:edit, room], class: "navbar-item" %>
-              <%= link_to  "施設の削除", "/reservations", class: "navbar-item" %>
+              <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "navbar-item" %>
             </div>
           </div>
         </td>

@@ -22,10 +22,8 @@
 
 .container {
     margin-top: 50px;
-    margin-bottom: 50px;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1000px;
 }
 
 .container h2 {
@@ -71,6 +69,8 @@
     margin:25px 0px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 465px;
 }
 
 .Required::after {
@@ -134,7 +134,7 @@
 }
 
 .form_label {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form_label .text_area {
@@ -148,8 +148,221 @@
 .header_tittle {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .room_detail {
     display: flex;
+}
+
+.room_detail_block {
+    background-color: rgb(233, 245, 245);
+    margin-left: 20px;
+    padding: 20px 20px;
+}
+
+.room_title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.room_price {
+    color: #ff4949;font-size: 30px;
+}
+
+.room_facility_detail {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.reservation_form {
+    padding: 10px 10px;
+}
+
+.reservation_input {
+    background-color: #fff;
+}
+
+.navbar-account {
+    background-color: #f5f5f5;
+}
+
+.navbar-profile {
+    background-color: #f5f5f5;
+}
+
+.section_title{
+    display: flex;
+    border-left: 5px solid #ddd;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.section_title h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search_form {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+}
+
+#cardlayout-wrap {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    margin: 2em auto;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+a.card-link {
+    text-decoration: none;
+}
+
+#cardlayout-wrap img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-figure {
+    margin: 0;
+    padding: 0;
+}
+
+.card-title {
+    margin: 0.6em 12px 0;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.card-text-tax {
+    margin: 0;
+    padding: 1em;
+    color: #818181;
+}
+
+.card-text-tax2 {
+    margin: 0;
+    padding: 1em;
+    color: #070606;
+}
+
+.search_price {
+    margin: 0.6em 12px 0;
+    font-size: 1.8em;
+}
+
+.card-list {
+    margin: 0.5em auto;
+    padding: 0;
+    width: 96%;
+    background: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+@media all and (min-width: 768px) {
+    .card-list {
+        margin: 0.5em 0;
+        width: calc(96% / 2);
+    }
+}
+
+@media all and (min-width: 992px) {
+    .card-list {
+        width: calc(96% / 3);
+}
+    #cardlayout-wrap::after{
+        content: "";
+        display: block;
+        width: calc(96% / 3);
+    }
+}
+
+.error_info {
+    margin-bottom: 15px;
+}
+
+.romm_img {
+    object-fit: contain;
+}
+
+.confirm_table {
+    border-bottom: 1px solid #100d0d;
+    border-collapse: collapse;
+    width: 45%;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirm_table th,
+.confirm_table td {
+    padding: 10px;
+    border: 1px solid #040404;
+}
+
+.confirm_table th {
+    background-color: #f5f5f5;
+    width: 160px;
+}
+
+.search_form {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.reservation_form {
+    text-align: center;
+}
+
+.reservation_form h2 {
+    margin-bottom: 10px;
+}
+.cofirm_info {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 35%;
+}
+
+.account_btn{
+    margin-bottom: 5px;
+}
+
+.list_table {
+    width: 1255px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list_table td {
+    margin: auto;
+}
+
+.reservation_footer_button {
+    text-align: right;
+}
+
+.re_resrvation_form {
+    margin: auto;
+    width: 580px;
 }

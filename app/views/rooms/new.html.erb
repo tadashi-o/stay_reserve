@@ -2,8 +2,9 @@
   <section>
     <div class="form_position">
       <div class="title">
-        <h2>新規登録</h2>
+        <h2>新規施設登録</h2>
       </div>
+      <%= render "shared/error", obj: @room %>
       <div class="register_form">
       <%= form_with model: @room do |f| %>
           <div class="form_label">

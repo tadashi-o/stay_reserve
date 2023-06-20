@@ -7,13 +7,21 @@ Rails.application.routes.draw do
   
   devise_for :users, 
               path: '', 
-              path_names: {sign_up: 'register', sign_in: 'login', edit: 'profile', sign_out: 'logout'},
+              path_names: {sign_up: 'register', sign_in: 'login', edit: 'account', sign_out: 'logout'},
               controllers: {registrations: 'registrations'}
 
-  resources :users
+  resources :users do
+    collection do
+      get 'profile'
+      get 'account'
+    end
+  end
+
+
   resources :rooms do
     collection do
       get 'own'
+      get 'search'
     end
   end
 
@@ -21,6 +29,10 @@ Rails.application.routes.draw do
     collection do
       post 'confirm' ,to: 'reservations#confirm'
     end
+    member do
+      patch 'edit_confirm'
+    end
   end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

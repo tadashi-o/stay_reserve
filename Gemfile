@@ -68,3 +68,5 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+gem 'ransack'

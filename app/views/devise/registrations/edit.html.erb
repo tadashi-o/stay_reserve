@@ -6,7 +6,7 @@
           <div class="box">
             
             <div class="field has-text-centered">
-              <strong>ユーザ登録情報編集</strong>
+              <strong>アカウント情報編集</strong>
             </div>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
@@ -34,10 +34,10 @@
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
               </div>
               <div class="field">
-                <%= f.submit "更新する", class: "button is-danger is-fullwidth" %>
+                <%= f.submit "更新する", class: "button is-danger is-fullwidth account_btn" %>
               </div>
             <% end %>
-            <%= link_to "戻る", :back, class: "button is-fullwidth m-t-10" %>
+            <%= link_to "戻る", :back, class: "button is-fullwidth m-t-10 account_btn" %>
           </div>
         </div>
       </div>

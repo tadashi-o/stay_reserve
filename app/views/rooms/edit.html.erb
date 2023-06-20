@@ -4,6 +4,7 @@
         <div class="title">
           <h2>施設情報の編集</h2>
         </div> 
+        <%= render "shared/error", obj: @room %>
         <div class="register_form">
           <%= form_with model: @room do |f| %>
           <div class="form_label">

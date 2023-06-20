@@ -1,67 +1,61 @@
 <div class="container">
-  <section>
-    <div class="new_form">
-      <div class="header_tittle">
-        <% if (!user_signed_in?) %>
-          <a href="/rooms" class="link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-          </svg>施設一覧へ戻る</a>
-        <% else %>
-          <a href="/rooms/own" class="link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-          </svg>施設一覧へ戻る</a>
-        <% end %>  
-        <% if (!user_signed_in?) %>
-        <% else %>
-          <a href='<%= "/rooms/#{@room.id}/edit" %>'>
-          <button type="button" class="button is-light">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-          </svg> 編集する
-          </button>
-          </a>
-        <% end %>
+  <div class="header_tittle">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+    </svg>
+    <%=link_to '一覧へ戻る', :back, class:'link' %>
+    </div>
+    <% if user_signed_in? && current_user.id == @room.user_id %>
+    <a href='<%= "/rooms/#{@room.id}/edit" %>'>
+      <button type="button" class="button is-light">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+      <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+      </svg> 編集する
+      </button>
+      </a>
+    <% else %>
+    <% end %>
+  </div>
+  <div class="room_detail">
+    <%= image_tag @room.facility_img.url,class: "room_img" %>
+    <div class="room_detail_block">
+      <div class="room_title">
+        <h2><%= @room.facility_name %></h2>
+        <p class="room_price">¥<%= @room.price.to_s(:delimited) %>〜</p>
       </div>
-      <div class="room_detail">
-        <%= image_tag @room.facility_img.url %>
-        <div class="room_detail_block">
-          <div class="room_tittle">
-            <h2><%= @room.facility_name %></h2>
-            <%= @room.price %>
+      <p><%= @room.address %></p>
+      <p class="room_facility_detail"><%= @room.facility_detail %></p>
+      <div class="error_info"><%= render "shared/error", obj: @reservation %></div>
+      <div class="reservation_form">
+      <%= form_with model: @reservation,url:confirm_reservations_path do |f| %>
+        <div class="reservation_input columns">
+          <div class="column">
+            <%= f.label :check_in ,"チェックイン", class:"Required label"  %>
+            <%= f.date_field :check_in, class: "form-control label", placeholder: "---- / -- / --" %>
           </div>
-          <%= @room.address %>
-          <%= @room.facility_detail %>
+          <div class="column">
+            <%= f.label :check_out ,"チェックアウト", class:"Required label"  %>
+            <%= f.date_field :check_out, class: "form-control label", placeholder: "---- / -- / --" %>
+          </div>
+          <div class="column">
+            <%= f.label :pepole ,"人数", class:"Required label"  %>
+            <%= f.text_field :pepole,class:"input is-link label"%>
+          </div>
         </div>
-        <div class="reservation_form">
-        <%= form_with model: @reservation,url:confirm_reservations_path do |f| %>
-          <div class="form_label">
-            <%= f.label :checkin ,"チェックイン", class:"Required"  %>
-            <%= f.date_field :checkin, class: "form-control", placeholder: "---- / -- / --" %>
-          </div>
-          <div class="form_label">
-            <%= f.label :checkout ,"チェックアウト", class:"Required"  %>
-            <%= f.date_field :checkout, class: "form-control", placeholder: "---- / -- / --" %>
-          </div>
-          <div class="form_label">
-            <%= f.label :pepole ,"人数", class:"Required"  %>
-            <%= f.text_field :pepole,class:"input is-link"%>
-          </div>
-          <%= f.hidden_field :room_id, value: @room.id %>
-          <% if (!user_signed_in?) %>
-          <div class="footer_button">
-            <a class="btn ReservationForm__button" href="/login">ログイン</a>
-          </div>
-          <% else %>
-          <div class="footer_button">
-            <a href="/rooms/own"><button type="button" class="button">キャンセル</button></a>
-            <%= f.submit "確認画面へ" %>
-          </div>
-          <% end %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <% if (!user_signed_in?) %>
+        <div class="footer_button">
+          <a class="button is-danger is-fullwidth account_btn" href="/login">ログイン</a>
+        </div>
+        <% else %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="footer_button">
+          <%= f.submit "予約する", class: "button is-success" %>
+        </div>
         <% end %>
-        </div>
+      <% end %>
       </div>
     </div>
-  </section>
+  </div>
 </div>

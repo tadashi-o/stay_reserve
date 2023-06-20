@@ -8,33 +8,34 @@
             <div class="field has-text-centered">
               <strong>新規ユーザ登録</strong>
             </div>
+            <%= render "shared/error", obj: @user %>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
               <div class="field">
-                <%= f.label :氏名, class: "label" %>
+                <%= f.label :氏名, class: "label Required" %>
                 <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class: "input" %>
               </div>
               <div class="field">
-                <%= f.label :メールアドレス, class: "label" %>
+                <%= f.label :メールアドレス, class: "label Required" %>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
               </div>
               <div class="field">
-                <%= f.label :パスワード, class: "label" %>
+                <%= f.label :パスワード, class: "label Required" %>
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> 文字以上)</em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
               </div>
               <div class="field">
-                <%= f.label :確認用パスワード, class: "label" %>
+                <%= f.label :確認用パスワード, class: "label Required" %>
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
               </div>
               <div class="field">
-                <%= f.submit "新規アカウントを作成", class: "button is-danger is-fullwidth m-t-10 m-b-10" %>
+                <%= f.submit "新規アカウントを作成", class: "button is-danger is-fullwidth m-t-10 m-b-10 account_btn" %>
               </div>
             <% end %>
             <div class="filed">
-              <%= link_to "アカウントをお持ちの方はこちら", new_session_path(resource_name), class: "button is-danger is-fullwidth m-t-10 m-b-10" %>
+              <%= link_to "アカウントをお持ちの方はこちら", new_session_path(resource_name), class: "button is-light is-fullwidth m-t-10 m-b-10" %>
             </div>
           </div>
         </div>
