@@ -12,7 +12,6 @@ class ReservationsController < ApplicationController
 
   def confirm
     @room = Room.find(params[:reservation][:room_id])
-    @user = current_user.id
     @reservation = Reservation.new(reservation_params)
     unless @reservation.valid?
       render template: "rooms/show"
@@ -22,7 +21,6 @@ class ReservationsController < ApplicationController
   def create
     @room = Room.find(params[:reservation][:room_id])
     @reservation = Reservation.new(reservation_params)
-    @user = current_user.id
     render room_path(@room) and return if !@reservation.save
     redirect_to "/reservations"
   end

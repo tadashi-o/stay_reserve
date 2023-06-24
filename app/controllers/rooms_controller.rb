@@ -49,7 +49,7 @@ class RoomsController < ApplicationController
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
-    flash[:notice] = "ユーザーを削除しました"
+    flash[:notice] = "「#{@room.facility_name}」を削除しました"
     redirect_to "/rooms/own"
   end
 
