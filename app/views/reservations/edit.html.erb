@@ -1,0 +1,40 @@
+<div class="container">
+    <section>
+        <div class="re_resrvation_form">
+            <div class="title">
+                <h2>再予約する</h2>
+            </div> 
+            <%= render "shared/error", obj: @reservation %>
+            <div class="register_form">
+                <%=  image_tag @reservation.room.facility_img.url,class: "room_img"  %>
+                <div class="room_title">
+                    <h2><%= @reservation.room.facility_name %></h2>
+                    <p class="room_price">¥<%= @reservation.room.price.to_s(:delimited) %>〜</p>
+                </div>
+                <p><%= @reservation.room.address %></p>
+                <p class="room_facility_detail"><%= @reservation.room.facility_detail %></p>
+                <%= form_with model: @reservation, url: edit_confirm_reservation_path(@reservation) do |f| %>
+                    <div class="form_label">
+                        <%= f.label :check_in ,"チェックイン", class:"Required"  %>
+                        <%= f.date_field :check_in, class: "input is-link", placeholder: "---- / -- / --" %>
+                    </div>
+                    <div class="form_label">
+                        <%= f.label :check_out ,"チェックアウト", class:"Required"  %>
+                        <%= f.date_field :check_out, class: "input is-link", placeholder: "---- / -- / --" %>
+                    </div>
+                    <div class="form_label">
+                        <%= f.label :pepole ,"人数", class:"Required"  %>
+                        <%= f.text_field :pepole,class:"input is-link"%>
+                    </div>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :id, value: @reservation.id %>
+                    <%= f.hidden_field :room_id, value: @reservation.room_id %>
+                    <div class="reservation_footer_button">
+                        <a href="/reservations"><button type="button" class="button">キャンセル</button></a>
+                        <%= f.submit "確認画面へ",class:"button is-link" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </section>
+</div>

@@ -6,11 +6,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    
+    <%= render  "shared/navbar" %>
+    <%= render "shared/notification" %>
+
     <%= yield %>
+  
+  <footer>
+    <div class="container-fluid">
+      <p>
+        Copyright © Stay Reserve 2023 All rights reserved
+      </p>
+    </div>
+  </footer>
   </body>
 </html>

@@ -1,0 +1,19 @@
+<div class="container">
+    <%= render  "shared/search" %>
+    <p class="sum"><strong><%= @rooms.count %></strong> 件見つかりました</p>
+    <div id="cardlayout-wrap">
+        <% @rooms.each do |room| %>
+            <section class="card-list">
+                <a class="card-link" href='<%= "/rooms/#{room.id}" %>'>
+                <figure class="card-figure"><%= image_tag room.facility_img.url %></figure>
+                <h2 class="card-title"><%= link_to room.facility_name, room  %></h2>
+                <p class="card-text-tax"><%= room.address %></p>
+                <p class="card-text-tax2"><%= room.facility_detail %></p>
+                    <div class="Room_footer">
+                        <p class="room_price search_price">¥<%= room.price.to_s(:delimited) %>〜</p>
+                    </div>
+                </a>
+            </section>
+        <% end %>
+    </div>
+</div>

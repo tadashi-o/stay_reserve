@@ -8,6 +8,15 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+window.Noty = require("noty")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("jquery")
+
+import "../stylesheets/application.scss"
+
+
+

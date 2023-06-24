@@ -1,0 +1,66 @@
+<section class="container UserSection ">
+    <h2>設定</h2>
+    
+</section>
+<section class="main-content columns is-fullheight">
+    <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+        <ul class="menu-list">
+            <li>
+                <ul>
+                    <li>
+                        <%= link_to  "アカウント", account_users_path, class: "navbar-item" %>
+                    </li>
+                    <li>
+                        <%= link_to  "プロフィール", profile_users_path, class: "navbar-item navbar-profile" %>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <div class="column is-10">
+        <div class="section">
+            <div class="section_title">
+                <h3>プロフィール</h3>
+                <a href='<%= "/users/#{current_user.id}/edit" %>'>
+                    <button type="button" class="button is-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                        </svg> 編集する
+                    </button>
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">アイコン画像</p>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <%= image_tag current_user.avatar.url %>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card is-hidden1">
+                <div class="card-header">
+                    <p class="card-header-title">名前</p>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <%= current_user.full_name %>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card is-hidden1">
+                <div class="card-header">
+                    <p class="card-header-title">自己紹介</p>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <%= current_user.introduction %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

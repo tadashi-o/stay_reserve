@@ -1,0 +1,39 @@
+<div class="container reservation_form">
+  <h2>予約内容の確認</h2>
+  <table class="confirm_table">
+    <tr>
+      <th>チェックイン</th>
+      <td><%= @reservation.check_in.strftime('%Y/%m/%d') %></td>
+    </tr>
+    <tr>
+      <th>チェックアウト</th>
+      <td><%= @reservation.check_out.strftime('%Y/%m/%d') %></td>
+    </tr>
+    <tr>
+      <th>日数</th>
+      <td><%= @reservation.days %></td>
+    </tr>
+    <tr>
+      <th>宿泊人数</th>
+      <td><%= @reservation.pepole %></td>
+    </tr>
+    <tr>
+      <th>お支払い金額</th>
+      <td>¥<%= @reservation.total_price.to_s(:delimited) %></td>
+    </tr>
+  </table>
+  <p class="cofirm_info">上記内容で正しければ「確定」ボタンを押してください。</p>
+  <%= form_with model:@reservation do |f| %>
+    <%= f.hidden_field :check_in, value: @reservation.check_in %>
+    <%= f.hidden_field :check_out, value: @reservation.check_out %>
+    <%= f.hidden_field :pepole, value: @reservation.pepole %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <div class="filed">
+      <%= f.submit '確定', class: "button is-danger btn" %>
+    </div>
+    <div class="actions">
+      <%= link_to"キャンセル",room_path(@room), class: "button m-t-10 btn"  %>
+    </div>
+  <% end %>
+</div>

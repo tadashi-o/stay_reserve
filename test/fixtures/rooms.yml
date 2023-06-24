@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility_name: MyString
+  facility_detail: MyText
+  price: 
+  address: MyString
+  facility_img: MyString
+
+two:
+  facility_name: MyString
+  facility_detail: MyText
+  price: 
+  address: MyString
+  facility_img: MyString

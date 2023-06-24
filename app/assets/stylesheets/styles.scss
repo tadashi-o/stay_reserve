@@ -1,0 +1,133 @@
+.FirstView {
+  background-image: image-url('top.jpg');
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  margin-bottom: 75px;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.FirstViewSearch {
+  background: hsla(0,0%,100%,.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+}
+
+.FirstView_title {
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn_seek {
+  margin-top: 10px;
+  width: 110px;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 30px;
+}
+
+.RecommendAresaSection {
+  margin-bottom: 260px;
+}
+
+.RecommendAreaSection__title {
+  border-bottom: 3px solid #ff7757;
+  font-size: 44px;
+  line-height: 66px;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.RecommendAreas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-gap: 32px;
+  gap: 32px;
+}
+
+.RecommendArea {
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  height: 455px;
+  justify-content: flex-end;
+  padding: 40px 20px 40px 20px;
+  width: 290px;
+}
+
+.RecommendArea--tokyo {
+  background-image: image-url('tokyo.png');
+}
+
+.RecommendArea--osaka {
+  background-image: image-url('osaka.png');
+}
+
+.RecommendArea--kyoto {
+  background-image: image-url('kyoto.png');
+}
+
+.RecommendArea--sapporo {
+  background-image: image-url('sapporo.png');
+}
+
+.RecommendArea__name {
+  color: #fff;
+}
+
+.RecommendArea__name--ja {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.RecommendArea__name--en {
+  font-family: Lato,sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #CACCCD;
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 350px;
+}
+
+.UserContainer {
+  display: block;
+}
+
+.SideNavigation {
+  border: 1px solid #ff7757;
+}
+
+.container-fluid {
+  padding-left: 400px;
+  padding-top: 150px;
+}
+
+.Title_Header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav_aicon {
+  margin-left: 1000px;
+}
